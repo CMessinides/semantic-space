@@ -26,6 +26,7 @@
   "homepage": "https://github.com/CMessinides/semantic-space#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "sassdoc": "^2.2.2"
   }
 }
