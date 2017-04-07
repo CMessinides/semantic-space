@@ -1,0 +1,31 @@
+{
+  "name": "semantic-space",
+  "version": "1.0.0",
+  "description": "A tiny Sass library to make layout readable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMessinides/semantic-space.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "layout",
+    "semantic",
+    "spacing",
+    "scss"
+  ],
+  "author": "Cameron Messinides",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CMessinides/semantic-space/issues"
+  },
+  "homepage": "https://github.com/CMessinides/semantic-space#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
