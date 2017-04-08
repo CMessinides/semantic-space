@@ -1,14 +1,14 @@
 {
-  "name": "semantic-space",
+  "name": "spacesuit",
   "version": "1.0.0",
-  "description": "A tiny Sass library to make layout readable",
+  "description": "A tiny Sass library to make spacing manageable and readable",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CMessinides/semantic-space.git"
+    "url": "git+https://github.com/CMessinides/spacesuit.git"
   },
   "keywords": [
     "sass",
@@ -21,9 +21,9 @@
   "author": "Cameron Messinides",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CMessinides/semantic-space/issues"
+    "url": "https://github.com/CMessinides/spacesuit/issues"
   },
-  "homepage": "https://github.com/CMessinides/semantic-space#readme",
+  "homepage": "https://github.com/CMessinides/spacesuit#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
