@@ -13,7 +13,7 @@ gulp.task('sass', function() {
 gulp.task('docs', function() {
   return gulp.src(sassPath)
       .pipe(sassdoc({
-        dest: 'site/docs',
+        dest: 'docs',
         verbose: true
       }))
 })
