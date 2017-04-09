@@ -6,16 +6,15 @@
 //// \@import "base/my-custom-settings";
 //// \@import "spacesuit/spacesuit";
 ////
+//// @access public
 //// @author Cameron Messinides
-//// @group Settings
+//// @group settings
 
 /// The scale of sizes that Spacesuit will use to generate padding and margins.
 /// The default properties may be discarded in favor of your own naming system
 /// (ex. `$spsuit-scale: (micro: 2rem, base: 4rem);`).
 ///
 /// @type map
-///
-/// @access public
 ///
 /// @prop {number (with unit)} xxs [0.125rem]
 /// @prop {number (with unit)} xs  [0.25rem]
@@ -45,8 +44,7 @@ $spsuit-scale: (
 /// To use more than one spacing scale in a project, you can define a new map
 /// as a variable. You can name this variable whatever you'd like:
 /// `$spsuit-custom-scale` is just an example. You can also name the keys
-/// whatever you'd like as long as the values are all numbers with units or
-/// percentages.
+/// whatever you'd like as long as the values are all numbers with units.
 ///
 /// Custom scales come in handy for changing an element's spacing through media
 /// queries. Spacesuit's built-in `spsuit-media` mixin takes an optional `scale`
@@ -54,8 +52,6 @@ $spsuit-scale: (
 /// to use at a certain breakpoint.
 ///
 /// @type map
-///
-/// @access public
 ///
 /// @todo add spsuit-media mixin
 ///
@@ -85,8 +81,5 @@ $spsuit-custom-scale: () !default;
 ///
 /// @type bool
 ///
-/// @access public
-///
-/// @todo add `_spsuit-convert-to-rems`
-///
+/// @see _spsuit-convert-to-rems
 $spsuit-force-rems: true !default;

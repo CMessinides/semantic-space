@@ -1,0 +1,42 @@
+//// Helper functions implemented by Spacesuit's mixins
+//// This file must be imported before any mixin files!
+////
+//// @access private
+//// @author Cameron Messinides
+//// @group helpers
+
+/// Converts any number (with unit) to the equivalent length in rems. Spacesuit
+/// assumes `1rem == 1em == 16px` for the purpose of this conversion.
+///
+/// If the global variable `$spsuit-force-rems` is false, this function will
+/// simply return $length with its original unit.
+///
+/// @param {number (with unit)} $length - The length to be converted to rems
+///
+/// @return {number (with unit)} The rem equivalent of the parameter `$length`
+///
+/// @throw Error if the parameter `$length` is unitless or not a number
+///
+/// @see $spsuit-force-rems
+///
+/// @example scss
+///   $my-length: _spsuit-convert-to-rems(20px); // 1.25rem
+///   $my-other-length: _spsuit-convert-to-rems(3em); // 3rem
+@function _spsuit-convert-to-rems($length) {
+  @if type-of($length) == number and not unitless($length) {
+    $unit: unit($length);
+
+    @if $unit == rem or not $spsuit-force-rems {
+      @return $length;
+    } @elseif $unit == em {
+      @return ($length / 1em) * 1rem;
+    } @elseif $unit == px {
+      @return ($length / 16px) * 1rem;
+    }
+
+  } @else {
+    @error "ERROR: Spacesuit tried to convert a unitless number (#{$length})
+    into rems - make sure all values in $spsuit-scale and other custom scales
+    are numbers with units.";
+  }
+}
