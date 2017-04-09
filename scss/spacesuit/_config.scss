@@ -1,0 +1,92 @@
+//// Spacesuit Configuration
+//// Edit variables here or import a file with overriding variables before you
+//// import Spacesuit
+////
+//// ex.
+//// \@import "base/my-custom-settings";
+//// \@import "spacesuit/spacesuit";
+////
+//// @author Cameron Messinides
+//// @group Settings
+
+/// The scale of sizes that Spacesuit will use to generate padding and margins.
+/// The default properties may be discarded in favor of your own naming system
+/// (ex. `$spsuit-scale: (micro: 2rem, base: 4rem);`).
+///
+/// @type map
+///
+/// @access public
+///
+/// @prop {number (with unit)} xxs [0.125rem]
+/// @prop {number (with unit)} xs  [0.25rem]
+/// @prop {number (with unit)} sm  [0.5rem]
+/// @prop {number (with unit)} md  [1rem]
+/// @prop {number (with unit)} lg  [2rem]
+/// @prop {number (with unit)} xl  [4rem]
+/// @prop {number (with unit)} xxl [6rem]
+///
+/// @example scss
+///   $spsuit-scale: (
+///     xxs: 2px,
+///     md: 16px,
+///     lg: 24px,
+///     xl: 48px
+///   );
+$spsuit-scale: (
+  xxs: 0.125rem, // 2px
+  xs:  0.25rem, // 4px
+  sm:  0.5rem, // 8px
+  md:  1rem, // 16px
+  lg:  2rem, // 32px
+  xl:  4rem, // 64px
+  xxl: 6rem // 96px
+) !default;
+
+/// To use more than one spacing scale in a project, you can define a new map
+/// as a variable. You can name this variable whatever you'd like:
+/// `$spsuit-custom-scale` is just an example. You can also name the keys
+/// whatever you'd like as long as the values are all numbers with units or
+/// percentages.
+///
+/// Custom scales come in handy for changing an element's spacing through media
+/// queries. Spacesuit's built-in `spsuit-media` mixin takes an optional `scale`
+/// parameter, which allows you to pass in the variable name of a custom scale
+/// to use at a certain breakpoint.
+///
+/// @type map
+///
+/// @access public
+///
+/// @todo add spsuit-media mixin
+///
+/// @prop {number (with unit)} * - A step in the scale; the key can be any
+/// string, number, or boolean
+///
+/// @example scss
+///   $spsuit-custom-scale: (
+///     0: 2px,
+///     1: 8px,
+///     2: 24px
+///   );
+///
+///   $spsuit-custom-scale-desktop: (
+///     0: 8px,
+///     1: 16px,
+///     2: 48px
+///   );
+$spsuit-custom-scale: () !default;
+
+/// When `$spsuit-force-rems` is true, Spacesuit's mixins default to rem units.
+/// If values in `$spsuit-scale` (or other custom scales) contain units other than
+/// rem, Spacesuit will convert those units to rems using
+/// `_spsuit-convert-to-rems`.
+///
+/// To disable this behavior, set `$spsuit-force-rems` to `false`.
+///
+/// @type bool
+///
+/// @access public
+///
+/// @todo add `_spsuit-convert-to-rems`
+///
+$spsuit-force-rems: true !default;
