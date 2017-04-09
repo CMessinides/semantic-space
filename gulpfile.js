@@ -20,6 +20,6 @@ gulp.task('docs', function() {
 
 gulp.task('default', ['sass', 'docs'])
 
-gulp.task('watch', ['sass'], function() {
-  gulp.watch(sassPath, ['sass']);
+gulp.task('watch', ['sass', 'docs'], function() {
+  gulp.watch(sassPath, ['sass', 'docs']);
 })
