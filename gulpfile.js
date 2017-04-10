@@ -12,7 +12,7 @@ gulp.task('sass', function() {
 })
 
 gulp.task('minify', function() {
-  return gulp.src('css/*.css')
+  return gulp.src('css/spacesuit.css')
       .pipe(sass({outputStyle:'compressed'}))
       .pipe(rename(function(path) {
         path.extname = ".min.css";
