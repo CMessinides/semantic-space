@@ -1,0 +1,98 @@
+// # Spacesuit
+@import "_spacesuit";
+
+@mixin _spsuit-base-styles($prefix) {
+  // ### Horizontal spacing
+  @each $step,$amount in $spsuit-scale {
+    .#{$prefix}space-horizontal--#{$step}-p {
+      @include space-cushion-horizontal($step);
+    }
+
+    .#{$prefix}space-horizontal--#{$step}-m {
+      @include space-cushion-horizontal($step, $property: margin);
+    }
+  }
+
+  // ### Vertical spacing
+  @each $step,$amount in $spsuit-scale {
+    .#{$prefix}space-vertical--#{$step}-p {
+      @include space-cushion-vertical($step);
+    }
+
+    .#{$prefix}space-vertical--#{$step}-m {
+      @include space-cushion-vertical($step, $property: margin);
+    }
+  }
+
+  // ### Inline spacing
+  @each $step,$amount in $spsuit-scale {
+    .#{$prefix}space-inline--#{$step}-pr {
+      @include space-inline($step, $property: padding);
+    }
+
+    .#{$prefix}space-inline--#{$step}-mr {
+      @include space-inline($step);
+    }
+
+    .#{$prefix}space-inline--#{$step}-pl {
+      @include space-inline($step, $property: padding, $direction: left);
+    }
+
+    .#{$prefix}space-inline--#{$step}-ml {
+      @include space-inline($step, $direction: left);
+    }
+  }
+
+  // ### Inset spacing
+  @each $step,$amount in $spsuit-scale {
+    .#{$prefix}space-inset--#{$step}-p {
+      @include space-inset($step);
+    }
+
+    .#{$prefix}space-inset--#{$step}-m {
+      @include space-inset($step, $property: margin);
+    }
+  }
+
+  // ### Stack spacing
+  @each $step,$amount in $spsuit-scale {
+    .#{$prefix}space-stack--#{$step}-pb {
+      @include space-stack($step, $property: padding);
+    }
+
+    .#{$prefix}space-stack--#{$step}-mb {
+      @include space-stack($step);
+    }
+
+    .#{$prefix}space-stack--#{$step}-pt {
+      @include space-stack($step, $property: padding, $direction: top);
+    }
+
+    .#{$prefix}space-stack--#{$step}-mt {
+      @include space-stack($step, $direction: top);
+    }
+  }
+}
+
+// ## General spacing styles (all screen widths)
+@include _spsuit-base-styles('');
+
+// ## Small screen spacing styles
+@include spsuit-media(sm) {
+  @include _spsuit-base-styles("sm-");
+};
+
+// ## Medium screen spacing styles
+@include spsuit-media(md) {
+  @include _spsuit-base-styles("md-");
+};
+
+// ## Large screen spacing styles
+@include spsuit-media(lg) {
+  @include _spsuit-base-styles("lg-");
+};
+
+// ## Extra large screen spacing styles
+@include spsuit-media(xl) {
+  @include _spsuit-base-styles("xl-");
+};
