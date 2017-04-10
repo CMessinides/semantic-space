@@ -53,7 +53,7 @@ $spsuit-scale: (
 ///
 /// @type map
 ///
-/// @todo add spsuit-media mixin
+/// @see spsuit-media
 ///
 /// @prop {number (with unit)} * - A step in the scale; the key can be any
 /// string, number, or boolean
@@ -71,6 +71,30 @@ $spsuit-scale: (
 ///     2: 48px
 ///   );
 $spsuit-custom-scale: () !default;
+
+/// With the `spsuit-media` mixin, you can pass in a key from `$spsuit-breakpoints`
+/// to easily reference and reuse a breakpoint. The keys can be anything you like,
+/// so long as you can reference them as a parameter in `spsuit-media`.
+///
+/// @type map
+///
+/// @see spsuit-media
+///
+/// @prop {string} * - A valid media query (without @media)
+///
+/// @example scss
+///   $spsuit-breakpoints: (
+///     phone: screen and (min-width: 24em),
+///     tablet: screen and (min-width: 48em),
+///     laptop: screen and (min-width: 64em),
+///     print: print only
+///   )
+$spsuit-breakpoints: (
+  sm: screen and (min-width: 28em),
+  md: screen and (min-width: 48em),
+  lg: screen and (min-width: 64em),
+  xl: screen and (min-width: 80em)
+) !default;
 
 /// When `$spsuit-force-rems` is true, Spacesuit's mixins default to rem units.
 /// If values in `$spsuit-scale` (or other custom scales) contain units other than

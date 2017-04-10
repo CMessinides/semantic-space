@@ -1,5 +1,5 @@
 //// Helper functions implemented by Spacesuit's mixins
-//// This file must be imported before any mixin files!
+//// ALERT: This file must be imported before any mixin files!
 ////
 //// @access private
 //// @author Cameron Messinides
@@ -33,10 +33,31 @@
     } @elseif $unit == px {
       @return ($length / 16px) * 1rem;
     }
-
   } @else {
-    @error "ERROR: Spacesuit tried to convert a unitless number (#{$length})
-    into rems - make sure all values in $spsuit-scale and other custom scales
-    are numbers with units.";
+    @error "ERROR: Spacesuit tried to convert a unitless number or a non-number
+    into rems - make sure all values in $spsuit-scale and other scales are
+    numbers with units";
+  }
+}
+
+/// Checks to see if a given value for a parameter falls within a set of valid
+/// values.
+///
+/// @param $given - The given value
+/// @param {list} $valid - A set of values that you will accept
+/// @param $default - The value you want to use if the given value is not one of
+/// the valid values
+///
+/// @return The given value, if it was one of the valid values, or the default
+/// value, if the given was invalid.
+///
+/// @example scss
+///   $valid: _spsuit-validate-parameter(foo, (foo,bar), bar); // returns foo
+///   $invalid: _spsuit-validate-parameter(0, (1,2,3), 1) // returns 1
+@function _spsuit-validate-parameter($given, $valid, $default) {
+  @if index($valid, $given) == null {
+    @return $default;
+  } @else {
+    @return $given;
   }
 }
