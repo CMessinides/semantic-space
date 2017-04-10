@@ -1,5 +1,5 @@
-//// Helper functions implemented by Spacesuit's mixins
-//// ALERT: This file must be imported before any mixin files!
+// Helper functions implemented by Spacesuit's mixins
+// ALERT: This file must be imported before any mixin files!
 ////
 //// @access private
 //// @author Cameron Messinides
@@ -43,12 +43,12 @@
 /// Checks to see if a given value for a parameter falls within a set of valid
 /// values.
 ///
-/// @param $given - The given value
+/// @param {*} $given - The given value
 /// @param {list} $valid - A set of values that you will accept
-/// @param $default - The value you want to use if the given value is not one of
+/// @param {*} $default - The value you want to use if the given value is not one of
 /// the valid values
 ///
-/// @return The given value, if it was one of the valid values, or the default
+/// @return {*} The given value, if it was one of the valid values, or the default
 /// value, if the given was invalid.
 ///
 /// @example scss
