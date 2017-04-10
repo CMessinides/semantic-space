@@ -1,0 +1,32 @@
+/// Creates a media query, allowing you to change an element's spacing at certain
+/// breakpoints.
+///
+/// @author Cameron Messinides
+///
+/// @access public
+///
+/// @group mixins
+///
+/// @param {string | number (with unit)} $breakpoint - This can be a key in
+/// `$spsuit-breakpoints` or, if it is a number with a unit, the minimum screen
+/// width you want to set for this query.
+/// @param {string} $media [screen] Can be either `screen` or `print`.
+///
+/// @content The content of this mixin can be any of Spacesuit's spacing mixins,
+/// but `spsuit-media` can also contain any style properties you would like - it
+/// works as a general-purpose media query mixin.
+@mixin spsuit-media($breakpoint, $media: screen) {
+  $query: null;
+
+  @if map-has-key($spsuit-breakpoints, $breakpoint) {
+    $query: map-get($spsuit-breakpoints, $breakpoint);
+  } @elseif type-of($breakpoint) == number {
+    $query: "#{$media} and (min-width: #{$breakpoint})";
+  }
+
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  }
+}

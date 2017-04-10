@@ -1,0 +1,83 @@
+//// Spacesuit Spacers
+//// Set padding and margin on elements, referencing lengths in $spsuit-scale and
+//// other custom scales.
+////
+//// @author Cameron Messinides
+////
+//// @access public
+////
+//// @group mixins
+////
+//// @param $key - A key in the spacing scale you want to use
+//// @param {map} $scale [$spsuit-scale] The scale in which you want to find the
+//// length associated with $key
+
+/// Sets equal amounts of space on the top and bottom of an element
+/// @param {string} $property [padding] Can be either `padding` or `margin`.
+@mixin space-cushion-horizontal($key, $scale: $spsuit-scale, $property: padding) {
+  $amount: _spsuit-convert-to-rems(map-get($scale, $key));
+
+  @if $property == margin {
+    margin-right: $amount;
+    margin-left: $amount;
+  } @else {
+    padding-right: $amount;
+    padding-left: $amount;
+  }
+}
+
+/// Sets equal amounts of space to the left and right of an element
+/// @param {string} $property [padding] Can be either `padding` or `margin`.
+@mixin space-cushion-vertical($key, $scale: $spsuit-scale, $property: padding) {
+  $amount: _spsuit-convert-to-rems(map-get($scale, $key));
+
+  @if $property == margin {
+    margin-top: $amount;
+    margin-bottom: $amount;
+  } @else {
+    padding-top: $amount;
+    padding-bottom: $amount;
+  }
+}
+
+/// Sets space to the right or left of an element, allowing it to be placed in a
+/// horizontal row of elements.
+/// @param {string} $property [margin] Can be either `padding` or `margin`.
+/// @param {string} $direction [right] Can be either 'right' or `left`.
+@mixin space-inline($key, $scale: $spsuit-scale, $property: margin, $direction: right) {
+  $amount: _spsuit-convert-to-rems(map-get($scale, $key));
+  $direction: _spsuit-validate-parameter($direction, (left,right), right);
+
+  @if $property == padding {
+    padding-#{$direction}: $amount;
+  } @else {
+    margin-#{$direction}: $amount;
+  }
+}
+
+/// Sets equal amounts of space on all four sides of an element
+/// @param {string} $property [padding] Can be either `padding` or `margin`.
+@mixin space-inset($key, $scale: $spsuit-scale, $property: padding) {
+  $amount: _spsuit-convert-to-rems(map-get($scale, $key));
+
+  @if $property == margin {
+    margin: $amount;
+  } @else {
+    padding: $amount;
+  }
+}
+
+/// Sets space to the right or left of an element, allowing it to be placed in a
+/// horizontal row of elements.
+/// @param {string} $property [margin] Can be either `padding` or `margin`.
+/// @param {string} $direction [bottom] Can be either 'top' or `bottom`.
+@mixin space-stack($key, $scale: $spsuit-scale, $property: margin, $direction: bottom) {
+  $amount: _spsuit-convert-to-rems(map-get($scale, $key));
+  $direction: _spsuit-validate-parameter($direction, (top,bottom), bottom);
+
+  @if $property == padding {
+    padding-#{$direction}: $amount;
+  } @else {
+    margin-#{$direction}: $amount;
+  }
+}

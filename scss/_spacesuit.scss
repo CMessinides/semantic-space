@@ -2,3 +2,6 @@
 @import "spacesuit/config";
 // General helper functions - import before all mixins!
 @import "spacesuit/helpers/helpers";
+// Mixins
+@import "spacesuit/mixins/media";
+@import "spacesuit/mixins/spacers";
