@@ -1,4 +1,6 @@
 # Spacesuit
+[![npm version](https://badge.fury.io/js/spacesuit-scss.svg)](https://badge.fury.io/js/spacesuit-scss)
+---
 Spacesuit is a library of Sass mixins that aims to make your padding and margin
 more **meaningful**, **flexible**, and **consistent**.
 
