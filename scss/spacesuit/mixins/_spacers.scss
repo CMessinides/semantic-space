@@ -66,8 +66,8 @@
   }
 }
 
-/// Sets space to the right or left of an element, allowing it to be placed in a
-/// horizontal row of elements.
+/// Sets space to the top or bottom of an element, allowing it to be placed in a
+/// vertical column of elements.
 /// @param {string} $property [margin] Can be either `padding` or `margin`.
 /// @param {string} $direction [bottom] Can be either 'top' or `bottom`.
 @mixin space-stack($key, $scale: $spsuit-scale, $property: margin, $direction: bottom) {
