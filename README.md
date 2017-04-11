@@ -99,3 +99,6 @@ sass`. To update only the docs, run `gulp docs`.
 ## Contributing
 Bugs can be reported to the repository's issues page. To submit fixes or features,
 open a pull request on Github.
+
+## License
+See the [LICENSE](https://github.com/CMessinides/spacesuit/blob/master/LICENSE).
